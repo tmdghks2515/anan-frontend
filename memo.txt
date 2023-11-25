@@ -1,0 +1,3 @@
+react skeleton shortcut:
+https://lowell-dev.tistory.com/59
+rsc, rscp
