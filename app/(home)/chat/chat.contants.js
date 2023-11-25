@@ -17,7 +17,7 @@ export const chats = [
   {
     id: 1,
     title: '김밥을 만드는 방법',
-    users: [anan, steve, alisa],
+    user: anan,
     messages: [
       {
         id: 1,
@@ -40,7 +40,7 @@ export const chats = [
   {
     id: 2,
     title: '하나몬님 멋있으세요',
-    users: [anan, steve, alisa],
+    user: anan,
     messages: [
       {
         id: 1,
@@ -63,7 +63,7 @@ export const chats = [
   {
     id: 3,
     title: '개발자가 개인 블로그 하나쯤은 있어야지 ㅋㅋ',
-    users: [anan, steve, alisa],
+    user: anan,
     messages: [
       {
         id: 1,
@@ -86,7 +86,7 @@ export const chats = [
   {
     id: 4,
     title: '테스트 코드 작성의 중요성',
-    users: [anan, steve, alisa],
+    user: anan,
     messages: [
       {
         id: 1,
@@ -109,7 +109,7 @@ export const chats = [
   {
     id: 5,
     title: '2023 요즘 국내 개발자 정보 공유 사이트 커리어리 추천',
-    users: [anan, steve, alisa],
+    user: anan,
     messages: [
       {
         id: 1,

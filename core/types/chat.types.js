@@ -11,7 +11,7 @@ export const Message = {
 export const Chat = {
   id: Number,
   title: String,
-  users: [User],
+  user: User,
   messages: [Message],
   createdAt: Date,
   updatedAt: Date,
