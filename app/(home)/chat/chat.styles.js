@@ -19,7 +19,7 @@ export const StyledChatItem = styled.div`
   border-radius: 0.1rem;
   box-shadow: ${(props) => props.theme.shadow.small};
   padding: 0.6rem;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   :hover {
     box-shadow: ${(props) => props.theme.shadow.medium};
     transform: translateY(-3px);
@@ -55,7 +55,7 @@ export const StyledMessages = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  background-color: ${(props) => props.theme.color.background2};
+  background-color: ${(props) => props.theme.color.background};
   border-radius: 0.3rem;
   padding: 0.5rem;
   font-size: ${(props) => props.theme.fontSize.normal};
@@ -67,14 +67,20 @@ export const StyledMessageItem = styled.div`
   justify-content: ${(props) => props.me && 'end'};
   & .avatar {
     order: ${(props) => props.me && 2};
+    align-self: flex-start;
   }
-  & .content {
-    order: ${(props) => props.me && 1};
-    padding-block: 0.3rem;
-    padding-inline: 0.5rem;
-    border-radius: 0.2rem;
-    color: ${(props) => props.me && 'white'};
-    background-color: ${(props) =>
-      props.me ? props.theme.color.primary : 'white'};
+  & .nick-cont {
+    text-align: ${(props) => (props.me ? 'right' : 'left')};
+    & .nick {
+      font-size: ${(props) => props.theme.fontSize.small};
+    }
+    & .cont {
+      padding-block: 0.3rem;
+      padding-inline: 0.5rem;
+      border-radius: 0.2rem;
+      color: ${(props) => props.me && 'white'};
+      background-color: ${(props) =>
+        props.me ? props.theme.color.primary : 'white'};
+    }
   }
 `

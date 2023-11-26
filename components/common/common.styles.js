@@ -28,7 +28,7 @@ export const StyledPageTop = styled.div`
 const avatarSize = (size) => {
   switch (size) {
     case 'sm':
-      return '1.6rem'
+      return '2rem'
     case 'lg':
       return '3rem'
     default:
@@ -37,9 +37,20 @@ const avatarSize = (size) => {
 }
 
 export const StyledAvatar = styled.span`
-  width: ${(props) => avatarSize(props.size)};
-  height: ${(props) => avatarSize(props.size)};
-  background-color: ${(props) => props.theme.color.background};
-  border-radius: 10rem;
-  border: 1px solid ${(props) => props.theme.color.background};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30rem;
+  & svg {
+    padding: 0;
+    margin: 0;
+    color: ${(props) => props.theme.color.background5};
+    width: ${(props) => avatarSize(props.size)};
+    height: ${(props) => avatarSize(props.size)};
+  }
+  & img {
+    border-radius: 30rem;
+    width: ${(props) => avatarSize(props.size)};
+    height: ${(props) => avatarSize(props.size)};
+  }
 `

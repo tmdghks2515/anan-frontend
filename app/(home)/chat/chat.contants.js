@@ -1,6 +1,8 @@
 const anan = {
   id: 1,
   nickname: '아난',
+  profileImgSrc:
+    'https://m.animegoods.co.kr/web/product/big/202210/8ced527e2492f9b76eaafa8f6746ccd7.jpg',
 }
 
 const steve = {

@@ -42,13 +42,6 @@ const theme = {
     body: 1.6,
     heading: 1.2,
   },
-  spacing: {
-    small: '8px',
-    medium: '16px',
-    large: '24px',
-    xLarge: '32px',
-    xxLarge: '48px',
-  },
   breakpoint: {
     small: '576px',
     medium: '768px',

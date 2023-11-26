@@ -7,6 +7,13 @@ export const StyledHeader = styled.div`
   padding-block: 1rem;
   gap: 3rem;
   align-items: center;
+  & .h-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+  }
 `
 
 export const StyledHomeLink = styled(Link)`

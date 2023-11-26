@@ -1,9 +1,12 @@
 'use client'
 import { ThemeProvider } from '@emotion/react'
+import { createTheme } from '@mui/material'
 import theme from '@/app/theme'
 
 const ThemeProviderCustom = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  const muiTheme = createTheme({ ...theme })
+
+  return <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>
 }
 
 export default ThemeProviderCustom
