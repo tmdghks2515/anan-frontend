@@ -1,5 +1,5 @@
 import React from 'react'
-import { Chat } from '@/core/types/chat.types'
+import { Chat } from '@/core/types/post.types'
 import { StyledChatItem, StyledMessages } from '@/app/(home)/chat/chat.styles'
 import moment from 'moment'
 import Link from 'next/link'
@@ -30,8 +30,8 @@ const ChatItem = ({ chat }) => {
   )
 }
 
-ChatItem.propTypes = {
-  chat: Chat,
-}
+// ChatItem.propTypes = {
+//   chat: Chat,
+// }
 
 export default ChatItem

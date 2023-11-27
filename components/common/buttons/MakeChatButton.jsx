@@ -11,7 +11,7 @@ const MakeChatButton = () => {
 
   return (
     <Button variant='outlined' onClick={handleClick}>
-      채팅 작성
+      글 작성
     </Button>
   )
 }

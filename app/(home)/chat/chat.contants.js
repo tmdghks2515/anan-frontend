@@ -1,16 +1,16 @@
-const anan = {
+export const anan = {
   id: 1,
   nickname: '아난',
   profileImgSrc:
     'https://m.animegoods.co.kr/web/product/big/202210/8ced527e2492f9b76eaafa8f6746ccd7.jpg',
 }
 
-const steve = {
+export const steve = {
   id: 2,
   nickname: '스티브',
 }
 
-const alisa = {
+export const alisa = {
   id: 3,
   nickname: '아리사',
 }

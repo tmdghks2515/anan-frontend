@@ -13,6 +13,16 @@ export const Chat = {
   title: String,
   user: User,
   messages: [Message],
+  participants: [User],
+  createdAt: Date,
+  updatedAt: Date,
+}
+
+export const Post = {
+  id: Number,
+  title: String,
+  user: User,
+  content: String,
   createdAt: Date,
   updatedAt: Date,
 }

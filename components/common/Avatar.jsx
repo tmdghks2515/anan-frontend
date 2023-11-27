@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import { User } from '@/core/types/user.types'
 import { Avatar as MuiAvatar } from '@mui/material'
 
-const Avatar = ({ user, size }) => {
+const Avatar = ({ user, size='md', ...props }) => {
   const calcSize = useMemo(() => {
     switch (size) {
       case 'xs':
@@ -21,16 +21,17 @@ const Avatar = ({ user, size }) => {
 
   return (
     <MuiAvatar
-      className='avatar'
+      {...props}
+      className={`avatar ${props.className || ''}`}
       src={user.profileImgSrc ? user.profileImgSrc : '/broken-image.jpg'}
       sx={{ width: calcSize, height: calcSize }}
     />
   )
 }
 
-Avatar.propTypes = {
-  user: User,
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
-}
+// Avatar.propTypes = {
+//   user: User,
+//   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
+// }
 
 export default Avatar

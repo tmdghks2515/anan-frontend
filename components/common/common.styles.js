@@ -5,6 +5,7 @@ export const StyledBody = styled.body`
   display: flex;
   flex-direction: column;
   max-width: ${(props) => props.theme.breakpoint.extraLarge};
+  min-height: 100vh;
   margin: auto;
   color: ${(props) => props.theme.color.text};
   font-size: ${(props) => props.theme.fontSize.normal};

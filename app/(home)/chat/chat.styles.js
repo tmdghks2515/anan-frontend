@@ -75,6 +75,7 @@ export const StyledMessageItem = styled.div`
       font-size: ${(props) => props.theme.fontSize.small};
     }
     & .cont {
+      white-space: pre-line;
       padding-block: 0.3rem;
       padding-inline: 0.5rem;
       border-radius: 0.2rem;
@@ -82,5 +83,42 @@ export const StyledMessageItem = styled.div`
       background-color: ${(props) =>
         props.me ? props.theme.color.primary : 'white'};
     }
+  }
+`
+
+export const StyledNewChatPage = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  & header {
+    margin-block: .5rem;
+    height: 3.5rem;
+  }
+  & .messages {
+    flex: 1;
+    overflow-y: auto;
+    padding-block: 1rem;
+  }
+  & .participants {
+    display: flex;
+    gap: .3rem;
+    & .avatar {
+      box-sizing: border-box;
+      border: 3px solid ${props => props.theme.color.background};
+      :hover {
+        border: 3px solid ${props => props.theme.color.background2};
+      }
+    }
+    & .active {
+      border: 3px solid ${props => props.theme.color.primary};
+      :hover {
+        border: 3px solid ${props => props.theme.color.primary};
+      }
+    }
+  }
+  & .input {
+    margin-block: .5rem;
+    display: flex;
   }
 `
