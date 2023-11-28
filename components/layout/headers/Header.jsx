@@ -4,8 +4,8 @@ import {
 } from '@/components/layout/headers/Header.styles'
 import MainNav from '@/components/layout/navs/MainNav'
 import SearchButton from '@/components/common/buttons/SearchButton'
-import { Button } from '@mui/material'
 import MakeChatButton from '@/components/common/buttons/MakeChatButton'
+import HeaderUser from '@/components/layout/headers/components/HeaderUser'
 
 const Header = () => {
   return (
@@ -14,8 +14,10 @@ const Header = () => {
       <MainNav />
 
       <div className='h-right'>
-        <MakeChatButton />
         <SearchButton />
+        <MakeChatButton />
+
+        <HeaderUser />
       </div>
     </StyledHeader>
   )

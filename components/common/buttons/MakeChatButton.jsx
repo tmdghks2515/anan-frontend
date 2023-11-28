@@ -1,10 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
 
 const MakeChatButton = () => {
   const router = useRouter()
+
   const handleClick = () => {
     router.push('/newChat')
   }
