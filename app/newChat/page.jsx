@@ -2,7 +2,6 @@
 import { Button, TextField } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import { StyledNewChatPage } from '@/app/(home)/chat/chat.styles'
-import { messages as dummyMessages } from '@/app/newChat/newChat.dummy'
 import MessageItem from '@/app/(home)/chat/components/MessageItem'
 import { anan, steve } from '@/app/(home)/chat/chat.contants'
 import SendIcon from '@mui/icons-material/Send'
@@ -12,13 +11,16 @@ import AddChatParticipantModal from '@/components/modals/AddChatParticipantModal
 
 const NewChatPage = () => {
   const [title, setTitle] = useState('')
-  const [messages, setMessages] = useState(dummyMessages)
+  const [messages, setMessages] = useState([])
   const [content, setContent] = useState('')
   const [participants, setParticipants] = useState([anan, steve])
+  const [messagedUsers, setMessagedUsers] = useState([])
   const [activeUser, setActiveUser] = useState(anan)
   const [titleError, setTitleError] = useState('')
   const [addParticipantModalOpen, setAddParticipantModalOpen] = useState(false)
+
   const messagesRef = useRef(null)
+  const titleRef = useRef(null)
 
   useEffect(() => {
     messagesRef.current.scrollTop = messagesRef.current.scrollHeight
@@ -33,6 +35,9 @@ const NewChatPage = () => {
   }
 
   const handleWriteMessage = () => {
+    console.log('111', document.getElementById('title').value)
+    console.log('222', document.querySelector('#title'))
+
     if (content) {
       setMessages([
         ...messages,
@@ -44,6 +49,10 @@ const NewChatPage = () => {
           updatedAt: new Date(),
         },
       ])
+
+      if (messagedUsers.findIndex((v) => v.id === activeUser.id) === -1)
+        setMessagedUsers((state) => [...state, activeUser])
+
       setContent('')
     }
   }
@@ -70,12 +79,13 @@ const NewChatPage = () => {
         {/* 제목 */}
         <header>
           <TextField
+            ref={titleRef}
             id='title'
             label='제목'
             fullWidth
             required
-            value={title}
-            onChange={handleChangeTitle}
+            // value={title}
+            // onChange={handleChangeTitle}
             error={!!titleError}
             helperText={titleError}
           />
@@ -129,6 +139,7 @@ const NewChatPage = () => {
         open={addParticipantModalOpen}
         handleClose={handleCloseAddPartModal}
         participants={participants}
+        messagedUsers={messagedUsers}
         setParticipants={setParticipants}
       />
     </>

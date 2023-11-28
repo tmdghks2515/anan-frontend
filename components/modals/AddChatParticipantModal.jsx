@@ -15,7 +15,7 @@ import Avatar from '@/components/common/Avatar'
 import RemoveCircleOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined'
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'
 import CloseIcon from '@mui/icons-material/Close'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
 import MuiAvatar from '@mui/material/Avatar'
 
@@ -24,6 +24,7 @@ const AddChatParticipantModal = ({
   handleClose,
   participants,
   setParticipants,
+  messagedUsers,
 }) => {
   const [adding, setAdding] = useState(false)
   const [nickname, setNickname] = useState('')
@@ -57,11 +58,25 @@ const AddChatParticipantModal = ({
   }
 
   const handleRmUser = (id) => {
-    setParticipants((prev) => {
-      const i = prev.findIndex((user) => user.id === id)
-      if (i > -1) prev.splice(i, 1)
-      return [...prev]
-    })
+    console.log('11111')
+    if (!messagedUsers.includes((v) => v.id === id)) {
+      setParticipants((prev) => {
+        const i = prev.findIndex((user) => user.id === id)
+        if (i > -1) prev.splice(i, 1)
+        return [...prev]
+      })
+    }
+  }
+
+  const isRmBtnDisabled = (id) => {
+    console.log('idididid', id)
+    console.log('messagedUsers', messagedUsers)
+
+    console.log(
+      'result!!!!',
+      messagedUsers.findIndex((v) => v.id === id)
+    )
+    return messagedUsers.findIndex((v) => v.id === id) > -1
   }
 
   return (
@@ -91,8 +106,12 @@ const AddChatParticipantModal = ({
             </ListItemAvatar>
             <ListItemText primary={participant.nickname} />
             <ListItemIcon sx={{ justifyContent: 'flex-end' }}>
-              <IconButton onClick={() => handleRmUser(participant.id)}>
-                <RemoveCircleOutlinedIcon color='error' fontSize='small' />
+              <IconButton
+                onClick={() => handleRmUser(participant.id)}
+                color='error'
+                disabled={isRmBtnDisabled(participant.id)}
+              >
+                <RemoveCircleOutlinedIcon fontSize='small' />
               </IconButton>
             </ListItemIcon>
           </ListItem>
